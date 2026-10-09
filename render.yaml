@@ -1,6 +1,6 @@
 services:
   # -----------------------------------------------------------
-  # FastAPI Backend Service
+  # FastAPI Backend Web Service
   # -----------------------------------------------------------
   - type: web
     name: satquery-api
@@ -19,10 +19,8 @@ services:
   # -----------------------------------------------------------
   # React Frontend Static Site
   # -----------------------------------------------------------
-  - type: web
+  - type: static
     name: satquery-frontend
-    runtime: static
-    plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
@@ -36,4 +34,3 @@ services:
           type: web
           name: satquery-api
           property: host
-
